@@ -1,20 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=5 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_8xoab"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_flrfc"]
-[ext_resource type="PackedScene" uid="uid://d0jti7begj0u5" path="res://Assets/TD_Towers.glb" id="3_6bi88"]
+[ext_resource type="Script" path="res://Scripts/solider_movement.gd" id="3_k21lc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
+size = Vector2(1665.52, 891.334)
 
 [node name="GameScene" type="Node2D"]
 position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 322)
+position = Vector2(-84.4826, 485.663)
 script = ExtResource("1_8xoab")
 
-[node name="BlueSoldier" type="Sprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_k21lc")
+
+[node name="BlueSoldier" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(426, 336)
 scale = Vector2(1.48276, 0.542892)
 texture = ExtResource("2_flrfc")
 
-[node name="TD_Towers" parent="." instance=ExtResource("3_6bi88")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(494.828, 399.958)
+scale = Vector2(1.00342, 0.844513)
+shape = SubResource("RectangleShape2D_wdhbm")
+debug_color = Color(0.411765, 0.521569, 0.815686, 0.419608)
