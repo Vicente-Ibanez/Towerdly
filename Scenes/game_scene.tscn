@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/solider_movement.gd" id="3_k21lc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
-size = Vector2(1665.52, 891.334)
+size = Vector2(1665.52, 1031.3)
 
 [node name="GameScene" type="Node2D"]
 position = Vector2(584, 242)
@@ -20,11 +20,11 @@ script = ExtResource("3_k21lc")
 
 [node name="BlueSoldier" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(426, 336)
-scale = Vector2(1.48276, 0.542892)
+scale = Vector2(1.46862, 0.542892)
 texture = ExtResource("2_flrfc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(494.828, 399.958)
-scale = Vector2(1.00342, 0.844513)
+position = Vector2(494.828, 421.446)
+scale = Vector2(1.00185, 0.844348)
 shape = SubResource("RectangleShape2D_wdhbm")
 debug_color = Color(0.411765, 0.521569, 0.815686, 0.419608)

@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw7clmei2e3lm"]
+
+[ext_resource type="Script" path="res://Scenes/Start.gd" id="1_evj4g"]
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 695.0
+offset_top = 4.0
+offset_right = 703.0
+offset_bottom = 12.0
+scale = Vector2(57.1135, 80.6001)
+
+[node name="Upgrades" type="Button" parent="MenuButton"]
+offset_left = -5.07761
+offset_top = 3.00248
+offset_right = 76.9224
+offset_bottom = 34.0025
+scale = Vector2(0.147577, 0.047727)
+text = "Upgrade"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 82.0
+offset_right = 744.0
+offset_bottom = 113.0
+scale = Vector2(4.78065, 2.59638)
+text = "Start"
+script = ExtResource("1_evj4g")
+
+[connection signal="button_down" from="Start" to="Start" method="_on_button_down"]
