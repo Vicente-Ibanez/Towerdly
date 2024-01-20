@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=8 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_8xoab"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_flrfc"]
 [ext_resource type="Script" path="res://Scripts/solider_movement.gd" id="3_k21lc"]
+[ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="4_2fn8o"]
+[ext_resource type="Texture2D" uid="uid://dfk72iw42vp0d" path="res://Assets/RedTower.png" id="5_iw2g1"]
+[ext_resource type="Texture2D" uid="uid://bk4nv0d6dhoi0" path="res://Assets/TD_Background.png" id="6_vkdxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
 size = Vector2(1665.52, 1031.3)
@@ -16,6 +19,7 @@ position = Vector2(-84.4826, 485.663)
 script = ExtResource("1_8xoab")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-5020.69, 1462.7)
 script = ExtResource("3_k21lc")
 
 [node name="BlueSoldier" type="Sprite2D" parent="CharacterBody2D"]
@@ -28,3 +32,19 @@ position = Vector2(494.828, 421.446)
 scale = Vector2(1.00185, 0.844348)
 shape = SubResource("RectangleShape2D_wdhbm")
 debug_color = Color(0.411765, 0.521569, 0.815686, 0.419608)
+
+[node name="BlueTower" type="Sprite2D" parent="."]
+position = Vector2(-5370.69, 691.355)
+scale = Vector2(5.64329, 2.17243)
+texture = ExtResource("4_2fn8o")
+
+[node name="RedTower" type="Sprite2D" parent="."]
+position = Vector2(56712.1, 708.496)
+scale = Vector2(5.831, 2.28366)
+texture = ExtResource("5_iw2g1")
+
+[node name="TdBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(25984.5, 1159.88)
+scale = Vector2(16.1278, 2.87453)
+texture = ExtResource("6_vkdxt")

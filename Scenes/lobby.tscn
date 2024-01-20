@@ -26,14 +26,14 @@ offset_bottom = 34.0025
 scale = Vector2(0.147577, 0.047727)
 text = "Upgrade"
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="Button" parent="MenuButton"]
 layout_mode = 0
-offset_left = 698.0
-offset_top = 82.0
-offset_right = 744.0
-offset_bottom = 113.0
-scale = Vector2(4.78065, 2.59638)
+offset_left = -5.20017
+offset_top = 0.545905
+offset_right = 40.7998
+offset_bottom = 31.5459
+scale = Vector2(0.262122, 0.0447277)
 text = "Start"
 script = ExtResource("1_evj4g")
 
-[connection signal="button_down" from="Start" to="Start" method="_on_button_down"]
+[connection signal="button_down" from="MenuButton/Start" to="MenuButton/Start" method="_on_button_down"]
