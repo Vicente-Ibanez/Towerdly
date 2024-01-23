@@ -1,15 +1,16 @@
 extends CharacterBody2D
 ## This script controls the movement of soldiers
 
-var speed = 700
+var speed = 70
 var accel = 150
 var friction = 700
-var direction = 1
+@export var direction = 1
 
-var side = "blue"
-var enemy = "red"
+@export var side = "blue"
+@export var enemy = "red"
+@export var health = 5
 var damage = 1.0
-var attack_speed = 15.0
+var attack_speed = 5.0
 var target = NAN
 var last_attack = 0.0
 
@@ -56,6 +57,7 @@ func attack():
 	
 	
 func _on_area_2d_area_entered(area):
+	print_debug(side)
 	area = area.get_parent()
 	# If the object collided with is an enemy
 	if area.is_in_group(enemy):
@@ -69,4 +71,17 @@ func _on_area_2d_area_exited(area):
 	if area == target:
 		target = NAN
 		is_attacking = false
+
+
+func kill():
+	queue_free()
+
+func _set_health(value):
+	health = value
+	if health <= 0:
+		kill()
+
+
+func OnHit(num):
+	_set_health(health - num)
 		

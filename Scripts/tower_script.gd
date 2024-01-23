@@ -1,11 +1,9 @@
 extends Node
 
-var max_health = 5
-var health 
+var health = 5
 var side = "red"
 
 func _ready():
-	health = max_health	
 	add_to_group(side)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=11 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_8xoab"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_flrfc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dfk72iw42vp0d" path="res://Assets/RedTower.png" id="5_iw2g1"]
 [ext_resource type="Script" path="res://Scripts/tower_script.gd" id="5_xqogc"]
 [ext_resource type="Texture2D" uid="uid://bk4nv0d6dhoi0" path="res://Assets/TD_Background.png" id="6_vkdxt"]
+[ext_resource type="Texture2D" uid="uid://cqtek2ll3xyoi" path="res://Assets/RedSoldier.png" id="8_3mjdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
 size = Vector2(1665.52, 1031.3)
@@ -23,7 +24,7 @@ position = Vector2(-84.4826, 485.663)
 script = ExtResource("1_8xoab")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-5020.69, 1462.7)
+position = Vector2(-2956.89, 1462.7)
 script = ExtResource("3_k21lc")
 
 [node name="BlueSoldier" type="Sprite2D" parent="CharacterBody2D"]
@@ -46,7 +47,7 @@ scale = Vector2(16.1278, 2.87453)
 texture = ExtResource("6_vkdxt")
 
 [node name="RedTowerStaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(4477.58, 0)
+position = Vector2(9993.1, 0)
 script = ExtResource("5_xqogc")
 
 [node name="Area2D" type="Area2D" parent="RedTowerStaticBody2D"]
@@ -67,5 +68,29 @@ position = Vector2(-5370.69, 691.355)
 scale = Vector2(5.64329, 2.17243)
 texture = ExtResource("4_2fn8o")
 
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(4670.69, 1462.7)
+scale = Vector2(0.997087, 1)
+script = ExtResource("3_k21lc")
+direction = -1
+side = "red"
+enemy = "blue"
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/Area2D"]
+position = Vector2(494.828, 421.446)
+scale = Vector2(1.00185, 0.844348)
+shape = SubResource("RectangleShape2D_wdhbm")
+debug_color = Color(0.411765, 0.521569, 0.815686, 0.419608)
+
+[node name="RedSoldier" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(520.481, 342.82)
+rotation = 3.14159
+scale = Vector2(1.13802, -0.528964)
+texture = ExtResource("8_3mjdj")
+
 [connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_area_exited"]
