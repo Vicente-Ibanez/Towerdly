@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_8xoab"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_flrfc"]
-[ext_resource type="Script" path="res://Scripts/solider_movement.gd" id="3_k21lc"]
+[ext_resource type="Script" path="res://Scripts/solider_script.gd" id="3_k21lc"]
 [ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="4_2fn8o"]
 [ext_resource type="Texture2D" uid="uid://dfk72iw42vp0d" path="res://Assets/RedTower.png" id="5_iw2g1"]
 [ext_resource type="Script" path="res://Scripts/tower_script.gd" id="5_xqogc"]
