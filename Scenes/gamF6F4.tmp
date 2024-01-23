@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=11 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_8xoab"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_flrfc"]
 [ext_resource type="Script" path="res://Scripts/solider_movement.gd" id="3_k21lc"]
 [ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="4_2fn8o"]
+[ext_resource type="Script" path="res://Scripts/group_assignment.gd" id="4_ogwjb"]
 [ext_resource type="Texture2D" uid="uid://dfk72iw42vp0d" path="res://Assets/RedTower.png" id="5_iw2g1"]
-[ext_resource type="Script" path="res://Scripts/tower_script.gd" id="5_xqogc"]
+[ext_resource type="Script" path="res://Scripts/tower_health.gd" id="5_xqogc"]
 [ext_resource type="Texture2D" uid="uid://bk4nv0d6dhoi0" path="res://Assets/TD_Background.png" id="6_vkdxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
@@ -51,6 +52,7 @@ script = ExtResource("5_xqogc")
 
 [node name="Area2D" type="Area2D" parent="RedTowerStaticBody2D"]
 position = Vector2(-4477.58, 0)
+script = ExtResource("4_ogwjb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedTowerStaticBody2D/Area2D"]
 position = Vector2(4634.48, 1162.73)
@@ -68,4 +70,3 @@ scale = Vector2(5.64329, 2.17243)
 texture = ExtResource("4_2fn8o")
 
 [connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_exited"]
