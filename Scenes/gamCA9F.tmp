@@ -1,26 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=11 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_8xoab"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_flrfc"]
 [ext_resource type="PackedScene" uid="uid://dlll4uoqebe4q" path="res://Full_Assets/Blue_Soldier_Full.tscn" id="3_esfei"]
 [ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="4_2fn8o"]
 [ext_resource type="Script" path="res://Scripts/spawn_soldier.gd" id="4_7g5vd"]
+[ext_resource type="Texture2D" uid="uid://dfk72iw42vp0d" path="res://Assets/RedTower.png" id="5_iw2g1"]
+[ext_resource type="Script" path="res://Scripts/tower_script.gd" id="5_xqogc"]
 [ext_resource type="Texture2D" uid="uid://bk4nv0d6dhoi0" path="res://Assets/TD_Background.png" id="6_vkdxt"]
-[ext_resource type="PackedScene" uid="uid://diibftngto78d" path="res://Full_Assets/Red_Tower_Full.tscn" id="7_8mtfa"]
 [ext_resource type="PackedScene" uid="uid://cjp5gnrdt8f64" path="res://Full_Assets/Red_Soldier_Full.tscn" id="8_t51qe"]
-[ext_resource type="PackedScene" uid="uid://c1c76eyl7tank" path="res://Full_Assets/Blue_Tower_Full.tscn" id="9_nev10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0inux"]
+size = Vector2(24.7005, 28.6725)
 
 [node name="GameScene" type="Node2D"]
 position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-z_index = 2
 position = Vector2(-84.4826, 822.768)
 script = ExtResource("1_8xoab")
 
 [node name="TextureButton" type="TextureButton" parent="Camera2D"]
-z_index = 2
+z_index = 1
 offset_left = -5829.31
 offset_top = 1114.16
 offset_right = -4189.31
@@ -31,7 +33,7 @@ texture_pressed = ExtResource("4_2fn8o")
 script = ExtResource("4_7g5vd")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_esfei")]
-position = Vector2(-3186.21, 1411.28)
+position = Vector2(-3415.51, 1474.13)
 
 [node name="TdBackground" type="Sprite2D" parent="."]
 z_index = -1
@@ -39,10 +41,28 @@ position = Vector2(25984.5, 1142.73)
 scale = Vector2(16.1278, 2.87453)
 texture = ExtResource("6_vkdxt")
 
-[node name="Red_Tower_Full" parent="." instance=ExtResource("7_8mtfa")]
+[node name="RedTowerStaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(9993.1, 0)
+script = ExtResource("5_xqogc")
+
+[node name="Area2D" type="Area2D" parent="RedTowerStaticBody2D"]
+position = Vector2(-4477.58, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedTowerStaticBody2D/Area2D"]
+position = Vector2(4634.48, 1162.73)
+scale = Vector2(143.652, -171.575)
+shape = SubResource("RectangleShape2D_0inux")
+
+[node name="RedTower" type="Sprite2D" parent="RedTowerStaticBody2D"]
+position = Vector2(-349.93, 708.496)
+scale = Vector2(5.831, 2.28366)
+texture = ExtResource("5_iw2g1")
+
+[node name="BlueTowerIMG" type="Sprite2D" parent="."]
+position = Vector2(-5370.69, 691.355)
+scale = Vector2(5.64329, 2.17243)
+texture = ExtResource("4_2fn8o")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("8_t51qe")]
-
-[node name="Blue_Tower_Full" parent="." instance=ExtResource("9_nev10")]
 
 [connection signal="pressed" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_pressed"]

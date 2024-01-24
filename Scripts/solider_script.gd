@@ -11,7 +11,7 @@ var friction = 700
 @export var health = 5
 var damage = 1.0
 var attack_speed = 5.0
-var target = NAN
+var target = null
 var last_attack = 0.0
 
 var is_attacking = false
@@ -52,12 +52,11 @@ func attack():
 		target.OnHit(damage)
 	else:
 		# If theres no target, reset attacking
-		target = NAN
+		target = null
 		is_attacking = false
 	
 	
 func _on_area_2d_area_entered(area):
-	print_debug(side)
 	area = area.get_parent()
 	# If the object collided with is an enemy
 	if area.is_in_group(enemy):
@@ -68,9 +67,11 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	area = area.get_parent()
 	# If target is killed or no longer in range
-	if area == target:
-		target = NAN
-		is_attacking = false
+	if area and target:
+		print_debug()
+		if area == target:
+			target = null
+			is_attacking = false
 
 
 func kill():

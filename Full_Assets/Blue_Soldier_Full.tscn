@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlll4uoqebe4q"]
+
+[ext_resource type="Script" path="res://Scripts/solider_script.gd" id="1_0int8"]
+[ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_n5gr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
+size = Vector2(1665.52, 1031.3)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-2956.89, 1462.7)
+script = ExtResource("1_0int8")
+
+[node name="BlueSoldier" type="Sprite2D" parent="."]
+position = Vector2(426, 336)
+scale = Vector2(1.46862, 0.542892)
+texture = ExtResource("2_n5gr6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(494.828, 421.446)
+scale = Vector2(1.00185, 0.844348)
+shape = SubResource("RectangleShape2D_wdhbm")
+debug_color = Color(0.411765, 0.521569, 0.815686, 0.419608)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

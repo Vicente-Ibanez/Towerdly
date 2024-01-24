@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjp5gnrdt8f64"]
+
+[ext_resource type="Script" path="res://Scripts/solider_script.gd" id="1_p7et5"]
+[ext_resource type="Texture2D" uid="uid://cqtek2ll3xyoi" path="res://Assets/RedSoldier.png" id="2_xx86k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
+size = Vector2(1665.52, 1031.3)
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+position = Vector2(4670.69, 1462.7)
+scale = Vector2(0.997087, 1)
+script = ExtResource("1_p7et5")
+direction = -1
+side = "red"
+enemy = "blue"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(494.828, 421.446)
+scale = Vector2(1.00185, 0.844348)
+shape = SubResource("RectangleShape2D_wdhbm")
+debug_color = Color(0.411765, 0.521569, 0.815686, 0.419608)
+
+[node name="RedSoldier" type="Sprite2D" parent="."]
+position = Vector2(520.481, 342.82)
+rotation = 3.14159
+scale = Vector2(1.13802, -0.528964)
+texture = ExtResource("2_xx86k")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

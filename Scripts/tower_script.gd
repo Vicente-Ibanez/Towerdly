@@ -1,7 +1,7 @@
 extends Node
 
 var health = 5
-var side = "red"
+@export var side = "red"
 
 func _ready():
 	add_to_group(side)

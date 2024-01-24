@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1c76eyl7tank"]
+
+[ext_resource type="Script" path="res://Scripts/tower_script.gd" id="1_20qdc"]
+[ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="2_b4xqr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0inux"]
+size = Vector2(22.6001, 28.6725)
+
+[node name="BlueTower" type="StaticBody2D"]
+z_index = 1
+position = Vector2(-4996.55, 228.547)
+script = ExtResource("1_20qdc")
+side = "blue"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-4477.58, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4061.2, 897.045)
+scale = Vector2(143.652, -171.575)
+shape = SubResource("RectangleShape2D_0inux")
+
+[node name="BlueTowerIMG" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-374.138, 628.503)
+scale = Vector2(5.64329, 2.17243)
+texture = ExtResource("2_b4xqr")
