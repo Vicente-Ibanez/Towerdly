@@ -5,6 +5,7 @@ var speed = 70
 var accel = 150
 var friction = 700
 @export var direction = 1
+@export var soldier_cost = 10
 
 @export var side = "blue"
 @export var enemy = "red"
@@ -68,7 +69,6 @@ func _on_area_2d_area_exited(area):
 	area = area.get_parent()
 	# If target is killed or no longer in range
 	if area and target:
-		print_debug()
 		if area == target:
 			target = null
 			is_attacking = false
@@ -86,3 +86,6 @@ func _set_health(value):
 func OnHit(num):
 	_set_health(health - num)
 		
+
+func get_cost():
+	return soldier_cost
