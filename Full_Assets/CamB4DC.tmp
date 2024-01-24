@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj5u6kvmyfoch"]
+
+[ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_84iha"]
+[ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_7ui1q"]
+[ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="3_vmo1u"]
+[ext_resource type="Script" path="res://Scripts/spawn_soldier.gd" id="4_8rlcv"]
+[ext_resource type="Script" path="res://Scripts/mana.gd" id="5_3krpn"]
+
+[node name="Camera2D" type="Camera2D"]
+z_index = 2
+position = Vector2(-84.4826, 822.768)
+script = ExtResource("1_84iha")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+z_index = 2
+offset_left = -5829.31
+offset_top = 1114.16
+offset_right = -4189.31
+offset_bottom = 3474.16
+scale = Vector2(1.16844, 0.287458)
+texture_normal = ExtResource("2_7ui1q")
+texture_pressed = ExtResource("3_vmo1u")
+script = ExtResource("4_8rlcv")
+
+[node name="Mana_Display" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_3krpn")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
