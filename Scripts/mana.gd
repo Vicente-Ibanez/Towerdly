@@ -8,10 +8,11 @@ var mana_speed = 10
 var mana_delay = 100 / mana_speed 
 var mana_delay_tracker 
 
+@export var side = "blue"
+
 func _ready():
 	mana = start_mana
 	mana_delay_tracker = mana_delay
-
 
 func _process(delta):
 	if mana_delay_tracker  <= 0.0:
@@ -21,10 +22,11 @@ func _process(delta):
 	else:
 		mana_delay_tracker  -= 0.1
 
-
 func set_mana(amount):
 	mana += amount
-	print_debug("mana red", mana)
+	if side == "blue" :
+		self.text = str(mana)
+	#print_debug("mana red", mana)
  
 func get_mana():
 	return mana

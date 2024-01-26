@@ -28,6 +28,7 @@ texture = ExtResource("2_d61ty")
 
 [node name="ManaController" type="Node" parent="."]
 script = ExtResource("3_r60pd")
+side = "red"
 
 [node name="SoldierController" type="Node" parent="."]
 script = ExtResource("4_4pe5w")
