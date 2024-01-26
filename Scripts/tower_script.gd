@@ -9,7 +9,7 @@ func _ready():
 
 func kill():
 	queue_free()
-
+	
 
 func _set_health(value):
 	health = value

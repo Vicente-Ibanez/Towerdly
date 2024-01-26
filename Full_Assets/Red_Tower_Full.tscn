@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://diibftngto78d"]
+[gd_scene load_steps=6 format=3 uid="uid://diibftngto78d"]
 
 [ext_resource type="Script" path="res://Scripts/tower_script.gd" id="1_xlvee"]
 [ext_resource type="Texture2D" uid="uid://dfk72iw42vp0d" path="res://Assets/RedTower.png" id="2_d61ty"]
+[ext_resource type="Script" path="res://Scripts/mana.gd" id="3_r60pd"]
+[ext_resource type="Script" path="res://Scripts/tower_spawn_soldier.gd" id="4_4pe5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0inux"]
 size = Vector2(22.6001, 28.6725)
@@ -23,3 +25,9 @@ shape = SubResource("RectangleShape2D_0inux")
 position = Vector2(-349.93, 708.496)
 scale = Vector2(5.831, 2.28366)
 texture = ExtResource("2_d61ty")
+
+[node name="ManaController" type="Node" parent="."]
+script = ExtResource("3_r60pd")
+
+[node name="SoldierController" type="Node" parent="."]
+script = ExtResource("4_4pe5w")

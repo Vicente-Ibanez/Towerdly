@@ -12,7 +12,6 @@ position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
 [node name="Camera2D" parent="." instance=ExtResource("1_r3br3")]
-position = Vector2(-84.4826, 822.768)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_esfei")]
 position = Vector2(-3186.21, 1411.28)
@@ -24,7 +23,9 @@ scale = Vector2(16.1278, 2.87453)
 texture = ExtResource("6_vkdxt")
 
 [node name="Red_Tower_Full" parent="." instance=ExtResource("7_8mtfa")]
+position = Vector2(57170.6, 114.273)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("8_t51qe")]
+position = Vector2(54781, 1462.7)
 
 [node name="Blue_Tower_Full" parent="." instance=ExtResource("9_nev10")]

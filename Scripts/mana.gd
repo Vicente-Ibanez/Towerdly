@@ -8,8 +8,6 @@ var mana_speed = 10
 var mana_delay = 100 / mana_speed 
 var mana_delay_tracker 
 
-#var label = $"Label"
-
 func _ready():
 	mana = start_mana
 	mana_delay_tracker = mana_delay
@@ -26,8 +24,7 @@ func _process(delta):
 
 func set_mana(amount):
 	mana += amount
-	self.text = str(mana)
-	print_debug("mana", mana)
-
+	print_debug("mana red", mana)
+ 
 func get_mana():
 	return mana
