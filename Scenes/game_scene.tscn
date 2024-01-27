@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=9 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="PackedScene" uid="uid://bj5u6kvmyfoch" path="res://Full_Assets/Camera_2D_Full.tscn" id="1_r3br3"]
 [ext_resource type="PackedScene" uid="uid://dlll4uoqebe4q" path="res://Full_Assets/Blue_Soldier_Full.tscn" id="3_esfei"]
 [ext_resource type="Texture2D" uid="uid://bk4nv0d6dhoi0" path="res://Assets/TD_Background.png" id="6_vkdxt"]
+[ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="7_5xhr3"]
 [ext_resource type="PackedScene" uid="uid://diibftngto78d" path="res://Full_Assets/Red_Tower_Full.tscn" id="7_8mtfa"]
+[ext_resource type="Script" path="res://Scripts/turret_controller.gd" id="8_53874"]
 [ext_resource type="PackedScene" uid="uid://cjp5gnrdt8f64" path="res://Full_Assets/Red_Soldier_Full.tscn" id="8_t51qe"]
 [ext_resource type="PackedScene" uid="uid://c1c76eyl7tank" path="res://Full_Assets/Blue_Tower_Full.tscn" id="9_nev10"]
 
@@ -29,3 +31,13 @@ position = Vector2(57170.6, 114.273)
 position = Vector2(54781, 1462.7)
 
 [node name="Blue_Tower_Full" parent="." instance=ExtResource("9_nev10")]
+
+[node name="Turret" type="Node2D" parent="."]
+position = Vector2(-5563.79, -965.609)
+
+[node name="Turret_IMG2" type="Sprite2D" parent="Turret"]
+position = Vector2(663.793, -39.9957)
+rotation = 1.6159
+scale = Vector2(0.560721, 1.82122)
+texture = ExtResource("7_5xhr3")
+script = ExtResource("8_53874")
