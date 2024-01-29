@@ -9,7 +9,7 @@ var friction = 700
 
 @export var side = "blue"
 @export var enemy = "red"
-@export var health = 5
+@export var health = 10
 var damage = 1.0
 var attack_speed = 5.0
 var target = null

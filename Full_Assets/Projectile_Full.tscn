@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b66ylwjgclgr8"]
+
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_gt2xr"]
+[ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="1_i6n7c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfug8"]
+
+[node name="Projectile2" type="RigidBody2D"]
+script = ExtResource("1_gt2xr")
+
+[node name="Projectile_IMG" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.5708
+scale = Vector2(0.0272104, 0.022165)
+texture = ExtResource("1_i6n7c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+scale = Vector2(1.03325, 1.35749)
+shape = SubResource("CapsuleShape2D_xfug8")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
