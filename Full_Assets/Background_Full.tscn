@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://csg7lt26aib05"]
+
+[ext_resource type="Texture2D" uid="uid://bk4nv0d6dhoi0" path="res://Assets/TD_Background.png" id="1_yyqq0"]
+
+[node name="TdBackground" type="Sprite2D"]
+z_index = -1
+position = Vector2(25984.5, 1142.73)
+scale = Vector2(16.1278, 2.87453)
+texture = ExtResource("1_yyqq0")

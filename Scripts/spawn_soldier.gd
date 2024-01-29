@@ -24,6 +24,6 @@ func _on_pressed():
 		y_offset = rng.randi_range(-2, 2)
 		
 		instance.position.x = side_castle.position.x
-		instance.position.y = side_castle.position.y + 825 + 150*y_offset
+		instance.position.y = side_castle.position.y + 425 + 150*y_offset
 
 		gamescene.add_child(instance)
