@@ -28,7 +28,7 @@ func _process(delta):
 		if(current_rotation <= max_down_rotation):
 			rotate(rotation_amt)
 			current_rotation += rotation_amt
-	elif Input.is_action_pressed("switch_turret_action"):
+	elif Input.is_action_just_pressed("switch_turret_action"):
 		# Switch turret action
 		turret_firing = !turret_firing
 		
@@ -41,7 +41,7 @@ func turret_action_control():
 		fire_delay_tracker = fire_delay/fire_speed
 		
 		var instance = projectile_preload.instantiate()
-		instance.rot = self.rotation - 1.55
+		instance.rot = self.rotation
 		instance.position.x = self.get_parent().position.x
 		instance.position.y = self.get_parent().position.y
 		
