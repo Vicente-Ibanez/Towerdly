@@ -8,7 +8,7 @@ var turret_firing = false
 const projectile_path: String = "res://Full_Assets/Projectile_Full.tscn"
 var projectile_preload = preload(projectile_path)
 var gamescene
-var fire_speed = 10
+var fire_speed = 1
 var fire_delay = 1000
 var fire_delay_tracker = fire_delay/fire_speed
 

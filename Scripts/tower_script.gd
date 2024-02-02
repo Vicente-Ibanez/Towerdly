@@ -9,6 +9,7 @@ func _ready():
 
 func kill():
 	queue_free()
+	get_tree().change_scene_to_file("res://Scenes/lobby.tscn")
 	
 
 func _set_health(value):
