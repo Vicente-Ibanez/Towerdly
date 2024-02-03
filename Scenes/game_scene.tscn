@@ -101,7 +101,6 @@ step = 1.0
 value = 100.0
 show_percentage = false
 script = ExtResource("8_yyg6j")
-side = "blue"
 
 [node name="HealthBarRed" type="ProgressBar" parent="UI_Controller"]
 z_index = 3
