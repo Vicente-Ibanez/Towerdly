@@ -26,7 +26,6 @@ func set_mana(amount):
 	mana += amount
 	if side == "blue" :
 		self.text = str(mana)
-	#print_debug("mana red", mana)
  
 func get_mana():
 	return mana

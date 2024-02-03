@@ -23,7 +23,7 @@ func kill():
 
 func _set_health(value):
 	health = value
-	emit_signal("healthChanged", (health/max_health)*100)	
+	emit_signal("healthChanged", (health/max_health)*100, side)	
 	if health <= 0:
 		kill()
 

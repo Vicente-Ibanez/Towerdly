@@ -43,7 +43,7 @@ func turret_action_control():
 		var instance = projectile_preload.instantiate()
 		instance.rot = self.rotation
 		instance.position.x = self.get_parent().position.x
-		instance.position.y = self.get_parent().position.y
+		instance.position.y = self.get_parent().position.y 
 		
 		gamescene.add_child(instance)
 	else:
