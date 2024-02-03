@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://do2d1e7u5bqyt"]
 
-[ext_resource type="PackedScene" uid="uid://csg7lt26aib05" path="res://Full_Assets/Background_Full.tscn" id="1_cjk57"]
-[ext_resource type="PackedScene" uid="uid://cy4364jajjey2" path="res://Full_Assets/Camera_2D_Full.tscn" id="1_r3br3"]
+[ext_resource type="PackedScene" uid="uid://bj5u6kvmyfoch" path="res://Full_Assets/Camera_2D_Full.tscn" id="1_r3br3"]
+[ext_resource type="Texture2D" uid="uid://eflxkyi5ioho" path="res://Assets/Background.jpg" id="1_t5o6j"]
 [ext_resource type="PackedScene" uid="uid://diibftngto78d" path="res://Full_Assets/Red_Tower_Full.tscn" id="7_8mtfa"]
 [ext_resource type="Texture2D" uid="uid://cgninlwg62ylm" path="res://Assets/crossbow.png" id="8_4y5nr"]
 [ext_resource type="Script" path="res://Scripts/turret_controller.gd" id="8_53874"]
@@ -12,30 +12,32 @@
 position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
-[node name="TdBackground" parent="." instance=ExtResource("1_cjk57")]
-position = Vector2(25984.5, 577.08)
-scale = Vector2(16.1278, 2.34239)
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(5.03245, 2.83981)
+texture = ExtResource("1_t5o6j")
 
 [node name="Red_Tower_Full" parent="." instance=ExtResource("7_8mtfa")]
-position = Vector2(57568.9, -28.5684)
-scale = Vector2(0.840792, 0.634314)
+position = Vector2(23208.6, -754.204)
+scale = Vector2(1.1, 1.2)
 
 [node name="Red_Soldier" parent="." instance=ExtResource("8_t51qe")]
 position = Vector2(13963.8, 805.627)
-scale = Vector2(0.898914, 0.922078)
+scale = Vector2(1.09923, 1.18085)
 
 [node name="Blue_Tower_Full" parent="." instance=ExtResource("9_nev10")]
-position = Vector2(-4996.55, -79.9914)
-scale = Vector2(0.904043, 0.757515)
+position = Vector2(-22267.2, -525.657)
+scale = Vector2(1.1, 1.1)
 
 [node name="Turret" type="Node2D" parent="."]
-position = Vector2(-5539.65, -1005.61)
+position = Vector2(-23498.3, -891.332)
+scale = Vector2(1.00705, 1)
 
 [node name="Turret" type="Sprite2D" parent="Turret"]
-position = Vector2(422.414, -57.1367)
+position = Vector2(1198.45, -954.182)
 scale = Vector2(1.36335, 0.378471)
 texture = ExtResource("8_4y5nr")
 script = ExtResource("8_53874")
 
 [node name="Camera2D" parent="." instance=ExtResource("1_r3br3")]
-position = Vector2(-84.4826, 514.23)
+position = Vector2(-16667.2, -319.965)
+scale = Vector2(1.48274, 1.48274)

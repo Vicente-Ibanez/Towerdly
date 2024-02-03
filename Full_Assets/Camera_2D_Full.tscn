@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy4364jajjey2"]
+[gd_scene load_steps=7 format=3 uid="uid://bj5u6kvmyfoch"]
 
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_84iha"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_7ui1q"]
