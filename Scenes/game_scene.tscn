@@ -13,12 +13,11 @@ position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(5.03245, 2.83981)
+scale = Vector2(5.032, 2.6)
 texture = ExtResource("1_t5o6j")
 
 [node name="Red_Tower_Full" parent="." instance=ExtResource("7_8mtfa")]
-position = Vector2(23208.6, -754.204)
-scale = Vector2(1.1, 1.2)
+position = Vector2(23015.5, -491.375)
 
 [node name="Red_Soldier" parent="." instance=ExtResource("8_t51qe")]
 position = Vector2(13963.8, 805.627)
@@ -39,5 +38,4 @@ texture = ExtResource("8_4y5nr")
 script = ExtResource("8_53874")
 
 [node name="Camera2D" parent="." instance=ExtResource("1_r3br3")]
-position = Vector2(-16667.2, -319.965)
-scale = Vector2(1.48274, 1.48274)
+position = Vector2(-18043.1, 405.67)
