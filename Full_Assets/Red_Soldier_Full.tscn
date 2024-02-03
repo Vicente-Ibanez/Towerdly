@@ -8,7 +8,7 @@ size = Vector2(1665.52, 1031.3)
 
 [node name="CharacterBody2D2" type="CharacterBody2D"]
 position = Vector2(4670.69, 1462.7)
-scale = Vector2(1.19, 1.307)
+scale = Vector2(0.997087, 1)
 script = ExtResource("1_p7et5")
 direction = -1
 side = "red"

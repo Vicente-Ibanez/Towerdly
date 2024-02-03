@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bfdnrp68jn0er"]
 
-[ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="1_xff03"]
+[ext_resource type="Script" path="res://Scripts/UI_movement.gd" id="1_xff03"]
 [ext_resource type="PackedScene" uid="uid://cy4364jajjey2" path="res://Full_Assets/Camera_2D_Full.tscn" id="2_t4hhj"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="3_1wnck"]
 [ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="4_x4y04"]

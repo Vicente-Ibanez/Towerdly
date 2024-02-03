@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://eflxkyi5ioho" path="res://Assets/Background.jpg" id="1_t5o6j"]
 [ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="7_5xhr3"]
 [ext_resource type="PackedScene" uid="uid://diibftngto78d" path="res://Full_Assets/Red_Tower_Full.tscn" id="7_8mtfa"]
-[ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="7_rodas"]
+[ext_resource type="Script" path="res://Scripts/UI_movement.gd" id="7_rodas"]
 [ext_resource type="Texture2D" uid="uid://cgninlwg62ylm" path="res://Assets/crossbow.png" id="8_4y5nr"]
 [ext_resource type="Script" path="res://Scripts/turret_controller.gd" id="8_53874"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="8_lcmiv"]
