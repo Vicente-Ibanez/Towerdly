@@ -1,41 +1,113 @@
-[gd_scene load_steps=8 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=16 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="PackedScene" uid="uid://bj5u6kvmyfoch" path="res://Full_Assets/Camera_2D_Full.tscn" id="1_r3br3"]
 [ext_resource type="Texture2D" uid="uid://eflxkyi5ioho" path="res://Assets/Background.jpg" id="1_t5o6j"]
+[ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="7_5xhr3"]
 [ext_resource type="PackedScene" uid="uid://diibftngto78d" path="res://Full_Assets/Red_Tower_Full.tscn" id="7_8mtfa"]
+[ext_resource type="Script" path="res://Scripts/UI_movement.gd" id="7_rodas"]
 [ext_resource type="Texture2D" uid="uid://cgninlwg62ylm" path="res://Assets/crossbow.png" id="8_4y5nr"]
 [ext_resource type="Script" path="res://Scripts/turret_controller.gd" id="8_53874"]
-[ext_resource type="PackedScene" uid="uid://cjp5gnrdt8f64" path="res://Full_Assets/Red_Soldier_Full.tscn" id="8_t51qe"]
+[ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="8_lcmiv"]
+[ext_resource type="Script" path="res://Scripts/HealthBar.gd" id="8_yyg6j"]
 [ext_resource type="PackedScene" uid="uid://c1c76eyl7tank" path="res://Full_Assets/Blue_Tower_Full.tscn" id="9_nev10"]
+[ext_resource type="Script" path="res://Scripts/spawn_soldier.gd" id="10_aygfg"]
+[ext_resource type="Script" path="res://Scripts/mana.gd" id="11_ci00h"]
+[ext_resource type="Texture2D" uid="uid://b60lvu3iwbji5" path="res://Assets/Botton UI.png" id="12_3aqy8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b40kk"]
+bg_color = Color(0.4, 0.52549, 0.980392, 0.627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pajue"]
+bg_color = Color(0.239216, 0.380392, 0.843137, 1)
 
 [node name="GameScene" type="Node2D"]
 position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(5.032, 2.6)
+position = Vector2(-4489.65, 405.67)
+scale = Vector2(4.065, 2.099)
 texture = ExtResource("1_t5o6j")
 
 [node name="Red_Tower_Full" parent="." instance=ExtResource("7_8mtfa")]
-position = Vector2(23015.5, -491.375)
-
-[node name="Red_Soldier" parent="." instance=ExtResource("8_t51qe")]
-position = Vector2(13963.8, 805.627)
-scale = Vector2(1.09923, 1.18085)
+position = Vector2(14072.4, 74.2777)
+scale = Vector2(0.677, 0.677)
 
 [node name="Blue_Tower_Full" parent="." instance=ExtResource("9_nev10")]
-position = Vector2(-22267.2, -525.657)
-scale = Vector2(1.1, 1.1)
+position = Vector2(-23015.5, 74.2777)
+scale = Vector2(0.677, 0.677)
 
 [node name="Turret" type="Node2D" parent="."]
-position = Vector2(-23498.3, -891.332)
-scale = Vector2(1.00705, 1)
+position = Vector2(-23932.7, -1108.45)
+scale = Vector2(0.919, 0.913)
 
 [node name="Turret" type="Sprite2D" parent="Turret"]
-position = Vector2(1198.45, -954.182)
-scale = Vector2(1.36335, 0.378471)
+position = Vector2(803.001, 314.252)
+scale = Vector2(1.041, 0.377)
 texture = ExtResource("8_4y5nr")
 script = ExtResource("8_53874")
 
-[node name="Camera2D" parent="." instance=ExtResource("1_r3br3")]
+[node name="UI_Controller" type="Node2D" parent="."]
+script = ExtResource("7_rodas")
+
+[node name="Camera2D" parent="UI_Controller" instance=ExtResource("1_r3br3")]
 position = Vector2(-18043.1, 405.67)
+
+[node name="Soldier_Button" type="TextureButton" parent="UI_Controller"]
+z_index = 3
+offset_left = -23626.2
+offset_top = 1766.45
+offset_right = -21986.2
+offset_bottom = 4126.45
+scale = Vector2(0.446043, 0.146405)
+texture_normal = ExtResource("8_lcmiv")
+texture_pressed = ExtResource("7_5xhr3")
+script = ExtResource("10_aygfg")
+
+[node name="BottonUi" type="Sprite2D" parent="UI_Controller"]
+z_index = 2
+position = Vector2(-21514.1, 983.677)
+scale = Vector2(2.96, 1.548)
+texture = ExtResource("12_3aqy8")
+
+[node name="Mana_Display" type="Label" parent="UI_Controller"]
+modulate = Color(0, 0.0509804, 1, 1)
+self_modulate = Color(0.380392, 1, 1, 1)
+z_index = 3
+offset_left = -17958.6
+offset_top = 1531.26
+offset_right = -17918.6
+offset_bottom = 1554.26
+scale = Vector2(44.4353, 27.4092)
+horizontal_alignment = 1
+script = ExtResource("11_ci00h")
+
+[node name="HealthBarBlue" type="ProgressBar" parent="UI_Controller"]
+z_index = 3
+offset_left = -24717.2
+offset_top = -1394.13
+offset_right = -24477.2
+offset_bottom = -1390.13
+scale = Vector2(11.3296, 34.8443)
+theme_override_styles/background = SubResource("StyleBoxFlat_b40kk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pajue")
+step = 1.0
+value = 60.0
+show_percentage = false
+script = ExtResource("8_yyg6j")
+
+[node name="HealthBarBlue2" type="ProgressBar" parent="UI_Controller"]
+z_index = 3
+offset_left = -14072.4
+offset_top = -1382.71
+offset_right = -13832.4
+offset_bottom = -1378.71
+scale = Vector2(11.688, 34.2001)
+theme_override_styles/background = SubResource("StyleBoxFlat_b40kk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pajue")
+step = 1.0
+value = 60.0
+show_percentage = false
+script = ExtResource("8_yyg6j")
+
+[connection signal="pressed" from="UI_Controller/Soldier_Button" to="UI_Controller/Soldier_Button" method="_on_pressed"]

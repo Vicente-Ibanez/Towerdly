@@ -1,8 +1,8 @@
-extends Camera2D
+extends Node2D
 
 const MOVE_SPEED = 750
 var left_limit = 600
-var right_limit = 4750
+var right_limit = 2800
 
 
 func _process(delta):
