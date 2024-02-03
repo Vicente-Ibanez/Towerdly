@@ -25,21 +25,21 @@ position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(-4381.03, 382.816)
+position = Vector2(-4489.65, 405.67)
 scale = Vector2(4.065, 2.099)
 texture = ExtResource("1_t5o6j")
 
 [node name="Red_Tower_Full" parent="." instance=ExtResource("7_8mtfa")]
-position = Vector2(14072.4, 302.824)
+position = Vector2(14072.4, 74.2777)
 scale = Vector2(0.677, 0.677)
 
 [node name="Blue_Tower_Full" parent="." instance=ExtResource("9_nev10")]
-position = Vector2(-22629.3, 257.115)
+position = Vector2(-23015.5, 74.2777)
 scale = Vector2(0.677, 0.677)
 
 [node name="Turret" type="Node2D" parent="."]
-position = Vector2(-23498.3, -891.332)
-scale = Vector2(1.00705, 1)
+position = Vector2(-23932.7, -1108.45)
+scale = Vector2(0.919, 0.913)
 
 [node name="Turret" type="Sprite2D" parent="Turret"]
 position = Vector2(803.001, 314.252)
@@ -55,32 +55,32 @@ position = Vector2(-18043.1, 405.67)
 
 [node name="Soldier_Button" type="TextureButton" parent="UI_Controller"]
 z_index = 3
-offset_left = -23351.3
-offset_top = 1664.43
-offset_right = -21711.3
-offset_bottom = 4024.43
-scale = Vector2(0.572828, 0.18802)
+offset_left = -23626.2
+offset_top = 1766.45
+offset_right = -21986.2
+offset_bottom = 4126.45
+scale = Vector2(0.446043, 0.146405)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+
+[node name="BottonUi" type="Sprite2D" parent="UI_Controller"]
+z_index = 2
+position = Vector2(-21514.1, 983.677)
+scale = Vector2(2.96, 1.548)
+texture = ExtResource("12_3aqy8")
 
 [node name="Mana_Display" type="Label" parent="UI_Controller"]
 modulate = Color(0, 0.0509804, 1, 1)
 self_modulate = Color(0.380392, 1, 1, 1)
 z_index = 3
-offset_left = -16522.4
+offset_left = -17958.6
 offset_top = 1531.26
-offset_right = -16482.4
+offset_right = -17918.6
 offset_bottom = 1554.26
 scale = Vector2(44.4353, 27.4092)
 horizontal_alignment = 1
 script = ExtResource("11_ci00h")
-
-[node name="BottonUi" type="Sprite2D" parent="UI_Controller"]
-z_index = 2
-position = Vector2(-20831, 771.345)
-scale = Vector2(3.46697, 1.81279)
-texture = ExtResource("12_3aqy8")
 
 [node name="HealthBarBlue" type="ProgressBar" parent="UI_Controller"]
 z_index = 3
@@ -98,9 +98,9 @@ script = ExtResource("8_yyg6j")
 
 [node name="HealthBarBlue2" type="ProgressBar" parent="UI_Controller"]
 z_index = 3
-offset_left = -14048.3
+offset_left = -14072.4
 offset_top = -1382.71
-offset_right = -13808.3
+offset_right = -13832.4
 offset_bottom = -1378.71
 scale = Vector2(11.688, 34.2001)
 theme_override_styles/background = SubResource("StyleBoxFlat_b40kk")
