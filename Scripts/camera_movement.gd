@@ -1,7 +1,7 @@
-extends Camera2D
+extends Node2D
 
 const MOVE_SPEED = 750
-var left_limit = 600
+var left_limit = -1500
 var right_limit = 4750
 
 
