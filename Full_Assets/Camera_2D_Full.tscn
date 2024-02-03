@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cy4364jajjey2"]
+[gd_scene format=3 uid="uid://bj5u6kvmyfoch"]
 
 [node name="Camera2D" type="Camera2D"]
 z_index = 2
