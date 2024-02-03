@@ -9,11 +9,11 @@ var y_offset
 
 
 func _ready():
-	gamescene = self.get_parent().get_parent()
-	side_castle = $"../../Blue_Tower_Full"
+	gamescene = self.get_parent().get_parent().get_parent()
+	side_castle = $"../../../Blue_Tower_Full"
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
-	mana_controller = get_node("../Mana_Display")
+	mana_controller = get_node("../../Mana_Display")
 	
 	
 func _on_pressed():

@@ -11,10 +11,9 @@ func _process(delta):
 		queue_free()
 
 func _physics_process(delta):
-	#var direction = Vector2.RIGHT.rotated(self.rotation)
 	var direction = Vector2.RIGHT.rotated(rot)
 	self.global_position += speed * direction * delta
-
+	$Area2D.rotate(delta)
 
 func _on_area_2d_area_entered(area):
 	area = area.get_parent()
