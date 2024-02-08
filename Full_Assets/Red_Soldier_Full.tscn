@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/solider_script.gd" id="1_p7et5"]
 [ext_resource type="Texture2D" uid="uid://cqtek2ll3xyoi" path="res://Assets/RedSoldier.png" id="2_xx86k"]
-[ext_resource type="Script" path="res://Full_Assets/soldier_animation.gd" id="3_aiotj"]
+[ext_resource type="Script" path="res://Scripts/soldier_animation.gd" id="3_aiotj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
 size = Vector2(1665.52, 1031.3)

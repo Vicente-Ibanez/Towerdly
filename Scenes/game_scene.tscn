@@ -1,12 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=17 format=3 uid="uid://do2d1e7u5bqyt"]
 
 [ext_resource type="PackedScene" uid="uid://bj5u6kvmyfoch" path="res://Full_Assets/Camera_2D_Full.tscn" id="1_r3br3"]
 [ext_resource type="Texture2D" uid="uid://eflxkyi5ioho" path="res://Assets/Background.jpg" id="1_t5o6j"]
+[ext_resource type="PackedScene" uid="uid://dqfunsntm1fut" path="res://Full_Assets/Turret_Full.tscn" id="6_ashbg"]
 [ext_resource type="Texture2D" uid="uid://b8rpa4rx6cjwc" path="res://Assets/BlueTower.png" id="7_5xhr3"]
 [ext_resource type="PackedScene" uid="uid://diibftngto78d" path="res://Full_Assets/Red_Tower_Full.tscn" id="7_8mtfa"]
 [ext_resource type="Script" path="res://Scripts/UI_movement.gd" id="7_rodas"]
-[ext_resource type="Texture2D" uid="uid://cgninlwg62ylm" path="res://Assets/crossbow.png" id="8_4y5nr"]
-[ext_resource type="Script" path="res://Scripts/turret_controller.gd" id="8_53874"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="8_lcmiv"]
 [ext_resource type="Script" path="res://Scripts/HealthBar.gd" id="8_yyg6j"]
 [ext_resource type="PackedScene" uid="uid://c1c76eyl7tank" path="res://Full_Assets/Blue_Tower_Full.tscn" id="9_nev10"]
@@ -47,11 +46,8 @@ scale = Vector2(0.677, 0.677)
 position = Vector2(-23932.7, -1108.45)
 scale = Vector2(0.919, 0.913)
 
-[node name="Turret" type="Sprite2D" parent="Turret"]
-position = Vector2(803.001, 314.252)
-scale = Vector2(1.041, 0.377)
-texture = ExtResource("8_4y5nr")
-script = ExtResource("8_53874")
+[node name="TurretFull" parent="Turret" instance=ExtResource("6_ashbg")]
+scale = Vector2(0.97075, 0.504956)
 
 [node name="UI_Controller" type="Node2D" parent="."]
 script = ExtResource("7_rodas")

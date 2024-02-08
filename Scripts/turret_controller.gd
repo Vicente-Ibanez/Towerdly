@@ -6,6 +6,7 @@ var current_rotation = 0
 
 var turret_firing = false
 const projectile_path: String = "res://Full_Assets/Projectile_Full.tscn"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 var projectile_preload = preload(projectile_path)
 var gamescene
 var fire_speed = 1
@@ -46,5 +47,7 @@ func turret_action_control():
 		instance.position.y = self.get_parent().position.y 
 		
 		gamescene.add_child(instance)
+		if(animation_player):
+			animation_player.play("turret_fire")
 	else:
 		fire_delay_tracker -= 10
