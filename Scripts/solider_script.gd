@@ -20,6 +20,8 @@ var input_movement = Vector2(5, 0)
 
 var potential_targets = []
 
+# Animation variables
+@onready var animation_tree : AnimationTree = $AnimatedSprite2D/AnimationTree
 func _ready():
 	add_to_group(side)
 
@@ -36,15 +38,16 @@ func _process(delta):
 			velocity = velocity.limit_length(speed)
 
 			move_and_slide()
+		update_animation_parameters()
 	# If attacking, perform attack
 	if is_attacking:
 		if last_attack <= 0.0:
 			attack()
 		else:
 			last_attack -= 1.0
-			
 
 func attack():
+	update_animation_parameters()
 	# Reset last attack, using attack speed to shorted the value
 	last_attack = 1000.0/attack_speed
 	# Last attack cannot be below 0
@@ -79,6 +82,7 @@ func _on_area_2d_area_exited(area):
 			# remove target as it left area
 			target = null
 			is_attacking = false
+			
 			# Remove freed objects
 			potential_targets.erase("<Freed Object>")
 			# Check if there's another target
@@ -86,8 +90,7 @@ func _on_area_2d_area_exited(area):
 				target = potential_targets[0]
 				potential_targets.erase(potential_targets[0])
 				is_attacking = true
-				
-		# if area is not the target but is in list of potential targets
+	# if area is not the target but is in list of potential targets
 	elif area in potential_targets:
 		potential_targets.erase(area)
 
@@ -107,3 +110,13 @@ func OnHit(num):
 
 func get_cost():
 	return soldier_cost
+
+
+func update_animation_parameters():
+	if(animation_tree):
+		if(is_attacking):
+			animation_tree["parameters/conditions/is_attacking"] = true
+			animation_tree["parameters/conditions/is_walking"] = false
+		else:
+			animation_tree["parameters/conditions/is_attacking"] = false
+			animation_tree["parameters/conditions/is_walking"] = true
