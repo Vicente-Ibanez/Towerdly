@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://do2d1e7u5bqyt"]
+[gd_scene load_steps=18 format=3 uid="uid://do2d1e7u5bqyt"]
 
+[ext_resource type="Script" path="res://Scenes/root_node.gd" id="1_jtfak"]
 [ext_resource type="PackedScene" uid="uid://bj5u6kvmyfoch" path="res://Full_Assets/Camera_2D_Full.tscn" id="1_r3br3"]
 [ext_resource type="Texture2D" uid="uid://eflxkyi5ioho" path="res://Assets/Background.jpg" id="1_t5o6j"]
 [ext_resource type="PackedScene" uid="uid://dqfunsntm1fut" path="res://Full_Assets/Turret_Full.tscn" id="6_ashbg"]
@@ -28,6 +29,7 @@ bg_color = Color(0.866667, 0.0862745, 0, 1)
 [node name="GameScene" type="Node2D"]
 position = Vector2(584, 242)
 scale = Vector2(0.0828572, 0.175019)
+script = ExtResource("1_jtfak")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-4489.65, 405.67)
@@ -167,6 +169,7 @@ value = 100.0
 show_percentage = false
 script = ExtResource("8_yyg6j")
 
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="pressed" from="UI_Controller/Troop_Spawn_UI/Soldier_Button" to="UI_Controller/Troop_Spawn_UI/Soldier_Button" method="_on_pressed"]
 [connection signal="pressed" from="UI_Controller/Troop_Spawn_UI/Soldier_Button2" to="UI_Controller/Troop_Spawn_UI/Soldier_Button2" method="_on_pressed"]
 [connection signal="pressed" from="UI_Controller/Troop_Spawn_UI/Soldier_Button3" to="UI_Controller/Troop_Spawn_UI/Soldier_Button3" method="_on_pressed"]

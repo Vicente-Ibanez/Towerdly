@@ -20,10 +20,12 @@ var input_movement = Vector2(5, 0)
 
 var potential_targets = []
 
+
 # Animation variables
 @onready var animation_tree : AnimationTree = $AnimatedSprite2D/AnimationTree
 func _ready():
 	add_to_group(side)
+	add_to_group("troop")
 
 func _process(delta):
 	# If not attacking, perform normal walk
@@ -97,6 +99,7 @@ func _on_area_2d_area_exited(area):
 
 func kill():
 	queue_free()
+
 
 func _set_health(value):
 	health = value
