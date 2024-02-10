@@ -1,5 +1,7 @@
 extends Sprite2D
 var rotation_amt = .01
+#var rotation_amt = 1
+
 var max_up_rotation = -1
 var max_down_rotation = .75
 var current_rotation = 0
@@ -48,7 +50,6 @@ func _process(delta):
 	elif Input.is_action_just_pressed("switch_turret_action"):
 		# Switch turret action
 		turret_firing = !turret_firing
-		
 	if turret_firing: 
 		turret_action_control()
 		

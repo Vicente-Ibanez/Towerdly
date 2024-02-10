@@ -52,19 +52,21 @@ scale = Vector2(0.919, 0.913)
 scale = Vector2(0.97075, 0.504956)
 
 [node name="UI_Controller" type="Node2D" parent="."]
+z_index = 10
 script = ExtResource("7_rodas")
 
 [node name="Camera2D" parent="UI_Controller" instance=ExtResource("1_r3br3")]
+z_index = 10
 position = Vector2(-18043.1, 405.67)
 
 [node name="Troop_Spawn_UI" type="Sprite2D" parent="UI_Controller"]
-z_index = 2
+z_index = 10
 position = Vector2(-21514.1, 983.677)
 scale = Vector2(2.96, 1.548)
 texture = ExtResource("12_3aqy8")
 
 [node name="Soldier_Button" type="TextureButton" parent="UI_Controller/Troop_Spawn_UI"]
-z_index = 3
+z_index = 10
 offset_left = -1016.9
 offset_top = 493.995
 offset_right = 623.101
@@ -73,9 +75,10 @@ scale = Vector2(0.179732, 0.103335)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Soldier_Button2" type="TextureButton" parent="UI_Controller/Troop_Spawn_UI"]
-z_index = 3
+z_index = 10
 offset_left = -735.562
 offset_top = 493.995
 offset_right = 904.438
@@ -84,9 +87,10 @@ scale = Vector2(0.179732, 0.103335)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Soldier_Button3" type="TextureButton" parent="UI_Controller/Troop_Spawn_UI"]
-z_index = 3
+z_index = 10
 offset_left = -450.148
 offset_top = 493.995
 offset_right = 1189.85
@@ -95,9 +99,10 @@ scale = Vector2(0.179732, 0.103335)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Soldier_Button4" type="TextureButton" parent="UI_Controller/Troop_Spawn_UI"]
-z_index = 3
+z_index = 10
 offset_left = -189.197
 offset_top = 493.995
 offset_right = 1450.8
@@ -106,9 +111,10 @@ scale = Vector2(0.179732, 0.103335)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Soldier_Button5" type="TextureButton" parent="UI_Controller/Troop_Spawn_UI"]
-z_index = 3
+z_index = 10
 offset_left = 35.0571
 offset_top = 493.995
 offset_right = 1675.06
@@ -117,9 +123,10 @@ scale = Vector2(0.179732, 0.103335)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Soldier_Button6" type="TextureButton" parent="UI_Controller/Troop_Spawn_UI"]
-z_index = 3
+z_index = 10
 offset_left = 287.853
 offset_top = 493.995
 offset_right = 1927.85
@@ -128,11 +135,12 @@ scale = Vector2(0.179732, 0.103335)
 texture_normal = ExtResource("8_lcmiv")
 texture_pressed = ExtResource("7_5xhr3")
 script = ExtResource("10_aygfg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Mana_Display" type="Label" parent="UI_Controller"]
 modulate = Color(0, 0.0509804, 1, 1)
 self_modulate = Color(0.380392, 1, 1, 1)
-z_index = 3
+z_index = 10
 offset_left = -17958.6
 offset_top = 1531.26
 offset_right = -17918.6
@@ -140,9 +148,10 @@ offset_bottom = 1554.26
 scale = Vector2(44.4353, 27.4092)
 horizontal_alignment = 1
 script = ExtResource("11_ci00h")
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBarBlue" type="ProgressBar" parent="UI_Controller"]
-z_index = 3
+z_index = 10
 offset_left = -24717.2
 offset_top = -1394.13
 offset_right = -24477.2
@@ -154,9 +163,10 @@ step = 1.0
 value = 100.0
 show_percentage = false
 script = ExtResource("8_yyg6j")
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBarRed" type="ProgressBar" parent="UI_Controller"]
-z_index = 3
+z_index = 10
 offset_left = -14072.4
 offset_top = -1382.71
 offset_right = -13832.4
@@ -168,6 +178,7 @@ step = 1.0
 value = 100.0
 show_percentage = false
 script = ExtResource("8_yyg6j")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="pressed" from="UI_Controller/Troop_Spawn_UI/Soldier_Button" to="UI_Controller/Troop_Spawn_UI/Soldier_Button" method="_on_pressed"]

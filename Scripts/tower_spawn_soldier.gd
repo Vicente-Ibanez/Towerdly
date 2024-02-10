@@ -39,5 +39,7 @@ func spawn_soldier():
 		
 		instance.position.x = side_castle.position.x
 		instance.position.y = side_castle.position.y + 625 + 150*y_offset
+		
+		instance.z_index = y_offset+5
 
 		gamescene.add_child(instance)
