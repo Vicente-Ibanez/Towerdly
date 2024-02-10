@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlll4uoqebe4q"]
+[gd_scene load_steps=15 format=3 uid="uid://dlll4uoqebe4q"]
 
 [ext_resource type="Script" path="res://Scripts/solider_script.gd" id="1_0int8"]
-[ext_resource type="Script" path="res://Scripts/soldier_animation.gd" id="2_g1gd1"]
 [ext_resource type="Texture2D" uid="uid://4fm7o60cywkw" path="res://Assets/BlueSoldier.png" id="2_n5gr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhbm"]
@@ -959,7 +958,6 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_fjd5n")
 }
-script = ExtResource("2_g1gd1")
 
 [node name="Node2D" type="Node2D" parent="AnimatedSprite2D"]
 
